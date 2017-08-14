@@ -1,0 +1,79 @@
+{
+  	"name": "NewsAPI", 
+  	"description": "News API is a simple and easy-to-use API that returns JSON metadata for the headlines currently published on a range of news sources and blogs.",
+  	"version": "1.0", 
+  	"steps": [  
+        {
+            "body": "{\r\n\t\"apiKey\": \"87b6dcb528b24ea0acaad145fa030ff8\",\r\n\t\"newsSource\": \"the-next-web\",\r\n\t\"typeOfList\": \"\"\r\n}", 
+            "form": {}, 
+            "url": "https://rapidapi.io/connect/NewsAPI/getArticles", 
+            "variables": [],
+            "step_type": "request", 
+            "auth": {
+                "username": "qa-project", 
+                "auth_type": "basic", 
+                "password": "481bab2d-e8fe-4214-8714-bab8157356e4"
+            }, 
+            "fragment": "", 
+            "note": "", 
+            "headers": {
+                "Content-Type": [
+                    "application/json"
+                ]
+            }, 
+            "assertions": [
+                {
+                    "comparison": "equal_number", 
+                    "value": 200, 
+                    "source": "response_status"
+                }, 
+                {
+                    "comparison": "equal", 
+                    "property": "outcome", 
+                    "value": "success", 
+                    "source": "response_json"
+                }
+            ], 
+            "scripts": [
+            ],
+            "before_scripts": [], 
+            "method": "POST"
+        },     
+        {
+            "body": "{\r\n\t\"sourceCategory\": \"business\",\r\n\t\"languageCode\": \"en\",\r\n\t\"countryCode\": \"de\"\r\n}", 
+            "form": {}, 
+            "url": "https://rapidapi.io/connect/NewsAPI/getSources", 
+            "variables": [],
+            "step_type": "request", 
+            "auth": {
+                "username": "qa-project", 
+                "auth_type": "basic", 
+                "password": "481bab2d-e8fe-4214-8714-bab8157356e4"
+            }, 
+            "fragment": "", 
+            "note": "", 
+            "headers": {
+                "Content-Type": [
+                    "application/json"
+                ]
+            }, 
+            "assertions": [
+                {
+                    "comparison": "equal_number", 
+                    "value": 200, 
+                    "source": "response_status"
+                }, 
+                {
+                    "comparison": "equal", 
+                    "property": "outcome", 
+                    "value": "success", 
+                    "source": "response_json"
+                }
+            ], 
+            "scripts": [
+            ],
+            "before_scripts": [], 
+            "method": "POST"
+        }
+  	]
+}

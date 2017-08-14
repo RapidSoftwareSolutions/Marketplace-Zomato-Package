@@ -1,0 +1,655 @@
+{
+	"package":"Zomato",
+	"tagline":"Zomato API",
+	"description":"Zomato APIs give you access to the freshest and most exhaustive information for over 1.5 million restaurants across 10,000 cities globally. With the Zomato APIs, you can : Search for restaurants by name, cuisine, or location; Display detailed information including ratings, location and cuisine;Use the Zomato Foodie Index to show great areas to dine in a city;",
+	"image":"https://logo.clearbit.com/www.zomato.com/",
+	"repo":"",
+	"keywords":[
+		"API",
+		"Restaurants",
+		"Foodie Index",
+		"Food",
+		"Cuisine",
+		"Dailymenu"
+	],
+	"accounts":{
+		"domain":"www.zomato.com",
+		"credentials":[
+			"apiKey"
+		]
+	},
+	"blocks":[
+		{
+			"name":"getAllCategories",
+			"description":"Get a list of categories. List of all restaurants categorized under a particular restaurant type can be obtained using getSearch endpoint with Category ID as inputs.",
+			"args":[
+				{
+					"name":"apiKey",
+					"type":"credentials",
+					"info":"API key.",
+					"required":true
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getCitiesBySearchQuery",
+			"description":"Find the Zomato ID and other details for a city. City Name in the Search Query - Returns list of cities matching the query. ",
+			"args":[
+				{
+					"name":"apiKey",
+					"type":"credentials",
+					"info":"API key.",
+					"required":true
+				},
+				{
+					"name":"searchQuery",
+					"type":"String",
+					"info":"Query by city name.",
+					"required":true
+				},
+				{
+					"name":"count",
+					"type":"Number",
+					"info":"Number of max results to display.",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getCitiesByCoordinates",
+			"description":"Find the Zomato ID and other details for a city. Using coordinates - Identifies the city details based on the coordinates of any location inside a city. ",
+			"args":[
+				{
+					"name":"apiKey",
+					"type":"credentials",
+					"info":"API key.",
+					"required":true
+				},
+				{
+					"name":"coordinates",
+					"type":"Map",
+					"info":"The latitude and longitude of the find place.",
+					"required":true
+				},
+				{
+					"name":"count",
+					"type":"Number",
+					"info":"Number of max results to display.",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getCities",
+			"description":"If you already know the Zomato City ID, this endpoint can be used to get other details of the city.",
+			"args":[
+				{
+					"name":"apiKey",
+					"type":"credentials",
+					"info":"API key.",
+					"required":true
+				},
+				{
+					"name":"cityIds",
+					"type":"List",
+					"info":"List of city ids.",
+					"required":true,
+					"structure":{
+						"name":"City id",
+						"type":"Number",
+						"info":"Single city id."
+					}
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getCollection",
+			"description":"Returns Zomato Restaurant Collections in a City by cityId.",
+			"args":[
+				{
+					"name":"apiKey",
+					"type":"credentials",
+					"info":"API key.",
+					"required":true
+				},
+				{
+					"name":"cityId",
+					"type":"Number",
+					"info":"Single city id.",
+					"required":true
+				},
+				{
+					"name":"count",
+					"type":"Number",
+					"info":"Number of max results to display.",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getCollectionsByCoordinates",
+			"description":"Returns Zomato Restaurant Collections in a City by coordinates.",
+			"args":[
+				{
+					"name":"apiKey",
+					"type":"credentials",
+					"info":"API key.",
+					"required":true
+				},
+				{
+					"name":"coordinates",
+					"type":"Map",
+					"info":"The latitude and longitude of the find place.",
+					"required":true
+				},
+				{
+					"name":"count",
+					"type":"Number",
+					"info":"Number of max results to display.",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getCuisines",
+			"description":"Get a list of all cuisines of restaurants listed in a city by cityId.",
+			"args":[
+				{
+					"name":"apiKey",
+					"type":"credentials",
+					"info":"API key.",
+					"required":true
+				},
+				{
+					"name":"cityId",
+					"type":"Number",
+					"info":"Single city id.",
+					"required":true
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getCuisinesByCoordinates",
+			"description":"Get a list of all cuisines of restaurants listed in a city by coordinates.",
+			"args":[
+				{
+					"name":"apiKey",
+					"type":"credentials",
+					"info":"API key.",
+					"required":true
+				},
+				{
+					"name":"coordinates",
+					"type":"Map",
+					"info":"The latitude and longitude of the find place.",
+					"required":true
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getEstablishments",
+			"description":"Get a list of restaurant types in a city by id.",
+			"args":[
+				{
+					"name":"apiKey",
+					"type":"credentials",
+					"info":"API key.",
+					"required":true
+				},
+				{
+					"name":"cityId",
+					"type":"Number",
+					"info":"Single city id.",
+					"required":true
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getEstablishmentsByCoordinates",
+			"description":"Get a list of restaurant types in a city by coordinates.",
+			"args":[
+				{
+					"name":"apiKey",
+					"type":"credentials",
+					"info":"API key.",
+					"required":true
+				},
+				{
+					"name":"coordinates",
+					"type":"Map",
+					"info":"The latitude and longitude of the find place.",
+					"required":true
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getLocationDetailsByCoordinates",
+			"description":"Get Foodie and Nightlife Index, list of popular cuisines and nearby restaurants around the given coordinates.",
+			"args":[
+				{
+					"name":"apiKey",
+					"type":"credentials",
+					"info":"API key.",
+					"required":true
+				},
+				{
+					"name":"coordinates",
+					"type":"Map",
+					"info":"The latitude and longitude of the find place.",
+					"required":true
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getLocationBySearchQuery",
+			"description":"Search for Zomato locations by keyword. ",
+			"args":[
+				{
+					"name":"apiKey",
+					"type":"credentials",
+					"info":"API key.",
+					"required":true
+				},
+				{
+					"name":"searchQuery",
+					"type":"String",
+					"info":"Suggestion for location name.",
+					"required":true
+				},
+				{
+					"name":"coordinates",
+					"type":"Map",
+					"info":"Provide coordinates to get better search results.",
+					"required":false
+				},
+				{
+					"name":"count",
+					"type":"Number",
+					"info":"Number of max results to display.Default:1.",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getLocationDetails",
+			"description":"Get Foodie Index, Nightlife Index, Top Cuisines and Best rated restaurants in a given location.",
+			"args":[
+				{
+					"name":"apiKey",
+					"type":"credentials",
+					"info":"API key.",
+					"required":true
+				},
+				{
+					"name":"entityId",
+					"type":"Number",
+					"info":"Location id obtained from getLocation... endpoints.",
+					"required":true
+				},
+				{
+					"name":"entityType",
+					"type":"Select",
+					"options":[
+						"city",
+						"subzone",
+						"zone",
+						"metro",
+						"group",
+						"landmark"
+					],
+					"info":"Location type obtained from getLocation... endpoints.",
+					"required":true
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getDailyMenu",
+			"description":"Get daily menu using Zomato restaurant ID.",
+			"args":[
+				{
+					"name":"apiKey",
+					"type":"credentials",
+					"info":"API key.",
+					"required":true
+				},
+				{
+					"name":"restaurantId",
+					"type":"Number",
+					"info":"Id of restaurant whose details are requested.",
+					"required":true
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getRestaurant",
+			"description":"Get detailed restaurant information using Zomato restaurant ID.",
+			"args":[
+				{
+					"name":"apiKey",
+					"type":"credentials",
+					"info":"API key.",
+					"required":true
+				},
+				{
+					"name":"restaurantId",
+					"type":"Number",
+					"info":"Id of restaurant whose details are requested.",
+					"required":true
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getReviews",
+			"description":"Get restaurant reviews using the Zomato restaurant ID. Only 5 latest reviews are available under the Basic API plan.",
+			"args":[
+				{
+					"name":"apiKey",
+					"type":"credentials",
+					"info":"API key.",
+					"required":true
+				},
+				{
+					"name":"restaurantId",
+					"type":"Number",
+					"info":"Id of restaurant whose details are requested.",
+					"required":true
+				},
+				{
+					"name":"count",
+					"type":"Number",
+					"info":"Number of max results to display.",
+					"required":false
+				},
+				{
+					"name":"offset",
+					"type":"Number",
+					"info":"Fetch results after this offset.",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		},
+		{
+			"name":"getSearch",
+			"description":"The location input can be specified using Zomato location ID or coordinates. Cuisine / Establishment / Collection IDs can be obtained from respective api calls.More in REDME.",
+			"args":[
+				{
+					"name":"apiKey",
+					"type":"credentials",
+					"info":"API key.",
+					"required":true
+				},
+				{
+					"name":"entityId",
+					"type":"Number",
+					"info":"Location id from getLocation... endpoints.",
+					"required":false
+				},
+				{
+					"name":"entityType",
+					"type":"Select",
+					"options":[
+						"city",
+						"subzone",
+						"zone",
+						"metro",
+						"group",
+						"landmark"
+					],
+					"info":"Location type obtained from getLocation... endpoints.",
+					"required":false
+				},
+				{
+					"name":"searchQuery",
+					"type":"String",
+					"info":"Search keyword.",
+					"required":false
+				},
+				{
+					"name":"count",
+					"type":"Number",
+					"info":"Number of max results to display.",
+					"required":false
+				},
+				{
+					"name":"offset",
+					"type":"Number",
+					"info":"Fetch results after this offset.",
+					"required":false
+				},
+				{
+					"name":"coordinates",
+					"type":"Map",
+					"info":"The latitude and longitude of the find place.",
+					"required":false
+				},
+				{
+					"name":"radiusSearch",
+					"type":"String",
+					"info":"Radius around (lat,lon); to define search area, defined in meters(M).",
+					"required":false
+				},
+				{
+					"name":"cuisinesIds",
+					"type":"List",
+					"info":"List of cuisines ids.",
+					"required":false,
+					"structure":{
+						"name":"cuisineId",
+						"type":"Number",
+						"info":"Single cuisine Id."
+					}
+				},
+				{
+					"name":"establishmentId",
+					"type":"String",
+					"info":"Establishment id obtained from getEstablishments or getEstablishmentsByCoordinates endpoints.",
+					"required":false
+				},
+				{
+					"name":"collectionId",
+					"type":"String",
+					"info":"Collection id obtained from getCollection or getCollectionById endpoint.",
+					"required":false
+				},
+				{
+					"name":"categoryId",
+					"type":"String",
+					"info":"Category id obtained from getCategories endpoint.",
+					"required":false
+				},
+				{
+					"name":"sort",
+					"type":"Select",
+					"options":[
+						"cost",
+						"rating",
+						"realDistance"
+					],
+					"info":"Sort restaurants by ...",
+					"required":false
+				},
+				{
+					"name":"order",
+					"type":"Select",
+					"options":[
+						"desc",
+						"asc",
+						"realDistance"
+					],
+					"info":"used with 'sort' parameter to order results.",
+					"required":false
+				}
+			],
+			"callbacks":[
+				{
+					"name":"error",
+					"info":"Error"
+				},
+				{
+					"name":"success",
+					"info":"Success"
+				}
+			]
+		}
+	]
+}

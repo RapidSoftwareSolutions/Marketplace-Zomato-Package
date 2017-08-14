@@ -1,0 +1,51 @@
+{
+	"name": "NewsAPI",
+	"description": "News API is a simple and easy-to-use API that returns JSON metadata for the headlines currently published on a range of news sources and blogs.",
+	"connect": {
+		"username": "qa-project",
+		"password": "481bab2d-e8fe-4214-8714-bab8157356e4"
+	},
+	"dependencies": {
+
+	},
+	"blocks": [
+		{
+			"name": "getArticles",
+			"note": "",
+			"skip": false,
+			"params": [			
+				{
+					"key": "apiKey",
+					"value": "87b6dcb528b24ea0acaad145fa030ff8"
+				}, 			
+				{
+					"key": "newsSource",
+					"value": "the-next-web"
+				}, 			
+				{
+					"key": "typeOfList",
+					"value": ""
+				}
+			]
+		}, 		
+		{
+			"name": "getSources",
+			"note": "",
+			"skip": false,
+			"params": [			
+				{
+					"key": "sourceCategory",
+					"value": "business"
+				}, 			
+				{
+					"key": "languageCode",
+					"value": "en"
+				}, 			
+				{
+					"key": "countryCode",
+					"value": "de"
+				}
+			]
+		}
+	]
+}
