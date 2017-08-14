@@ -1,6 +1,6 @@
 [![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/Zomato/functions?utm_source=RapidAPIGitHub_ZomatoFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
 # Zomato Package
-Zomato APIs give you access to the freshest and most exhaustive information for over 1.5 million restaurants across 10,000 cities globally. With the Zomato APIs, you can : Search for restaurants by name, cuisine, or location; Display detailed information including ratings, location and cuisine;Use the Zomato Foodie Index to show great areas to dine in a city;
+Zomato APIs give you access to the freshest and most exhaustive information for over 1.5 million restaurants across 10,000 cities globally. With the Zomato APIs, you can : Search for restaurants by name, cuisine, or location; Display detailed information including ratings, location and cuisine;Use the Zomato Foodie Index to show great areas to dine in a city.
 * Domain: [www.zomato.com](https://www.zomato.com)
 * Credentials: apiKey
 
@@ -154,7 +154,10 @@ Get restaurant reviews using the Zomato restaurant ID. Only 5 latest reviews are
 | offset      | Number     | Fetch results after this offset.
 
 ## Zomato.getSearch
-The location input can be specified using Zomato location ID or coordinates. Cuisine / Establishment / Collection IDs can be obtained from respective api calls.More in REDME.
+The location input can be specified using Zomato location ID or coordinates. Cuisine / Establishment / Collection IDs can be obtained from respective api calls.Get up to 100 restaurants by changing the 'start' and 'count' parameters with the maximum value of count being 20. Partner Access is required to access photos and reviews.
+To search for 'Italian' restaurants in 'Manhattan, New York City', set ```cuisines = 55, entity_id = 94741 and entity_type = zone```
+To search for 'cafes' in 'Manhattan, New York City', set ```establishment_type = 1, entity_type = zone and entity_id = 94741```
+Get list of all restaurants in 'Trending this Week' collection in 'New York City' by using ```entity_id = 280, entity_type = city and collection_id = 1```.
 
 | Field          | Type       | Description
 |----------------|------------|----------
