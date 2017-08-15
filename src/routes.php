@@ -2,7 +2,7 @@
 $routes = [
     'metadata',
     'getAllCategories',
-    'getCitiesBySearchQuery',
+    'searchCity',
     'getCitiesByCoordinates',
     'getCities',
     'getCollection',
@@ -12,12 +12,12 @@ $routes = [
     'getEstablishments',
     'getEstablishmentsByCoordinates',
     'getLocationDetailsByCoordinates',
-    'getLocationBySearchQuery',
+    'searchLocation',
     'getLocationDetails',
     'getDailyMenu',
     'getRestaurant',
     'getReviews',
-    'getSearch'
+    'search'
 
 
 

@@ -1,7 +1,7 @@
 <?php
 
 
-$app->post('/api/Zomato/getSearch', function ($request, $response) {
+$app->post('/api/Zomato/search', function ($request, $response) {
 
 
     $option = array(

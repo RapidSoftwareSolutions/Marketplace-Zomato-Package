@@ -1,22 +1,20 @@
 <?php
 
 
-$app->post('/api/Zomato/getLocationBySearchQuery', function ($request, $response) {
+$app->post('/api/Zomato/searchCity', function ($request, $response) {
 
 
     $option = array(
         "apiKey" => "apiKey",
-        "searchQuery"  => "query",
-        "coordinates" => "coordinates",
+        "searchQuery"  => "q",
         "count" => "count"
     );
 
 
     $arrayType = array();
 
-    $url = '/locations';
+    $url = 'https://developers.zomato.com/api/v2.1/cities';
     $settings = $this->settings;
-    $url = $settings['baseUrl'].$url;
     $checkRequest = $this->validation;
     $validateRes = $checkRequest->validate($request, ['apiKey','searchQuery']);
     if(!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback']=='error') {
@@ -49,20 +47,7 @@ $app->post('/api/Zomato/getLocationBySearchQuery', function ($request, $response
 
     $client = $this->httpClient;
     $apiKey = $queryParam['apiKey'];
-    if(!empty($queryParam['coordinates']))
-    {
-        $queryParam['lat']  = '';
-        $queryParam['lon'] = '';
-        $part = explode(',',$queryParam['coordinates']);
-        if(!empty($part[0]) && !empty($part[1]))
-        {
-            $queryParam['lat'] = trim($part[0]);
-            $queryParam['lon'] = trim($part[1]);
-        }
 
-        unset($queryParam['coordinates']);
-
-    }
 
 
     try {

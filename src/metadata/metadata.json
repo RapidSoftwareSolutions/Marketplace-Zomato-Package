@@ -21,7 +21,7 @@
 	"blocks":[
 		{
 			"name":"getAllCategories",
-			"description":"Get a list of categories. List of all restaurants categorized under a particular restaurant type can be obtained using getSearch endpoint with Category ID as inputs.",
+			"description":"Get a list of categories. List of all restaurants categorized under a particular restaurant type can be obtained using search endpoint with Category ID as inputs.",
 			"args":[
 				{
 					"name":"apiKey",
@@ -42,7 +42,7 @@
 			]
 		},
 		{
-			"name":"getCitiesBySearchQuery",
+			"name":"searchCity",
 			"description":"Find the Zomato ID and other details for a city. City Name in the Search Query - Returns list of cities matching the query. ",
 			"args":[
 				{
@@ -351,7 +351,7 @@
 			]
 		},
 		{
-			"name":"getLocationBySearchQuery",
+			"name":"searchLocation",
 			"description":"Search for Zomato locations by keyword. ",
 			"args":[
 				{
@@ -529,7 +529,7 @@
 			]
 		},
 		{
-			"name":"getSearch",
+			"name":"search",
 			"description":"The location input can be specified using Zomato location ID or coordinates. Cuisine / Establishment / Collection IDs can be obtained from respective api calls.More in REDME.",
 			"args":[
 				{

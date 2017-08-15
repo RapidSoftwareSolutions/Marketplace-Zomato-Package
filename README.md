@@ -24,7 +24,7 @@ Get a list of categories. List of all restaurants categorized under a particular
 |-------|------------|----------
 | apiKey| credentials| API key.
 
-## Zomato.getCitiesBySearchQuery
+## Zomato.searchCity
 Find the Zomato ID and other details for a city. City Name in the Search Query - Returns list of cities matching the query. 
 
 | Field      | Type       | Description
@@ -108,7 +108,7 @@ Get Foodie and Nightlife Index, list of popular cuisines and nearby restaurants 
 | apiKey     | credentials| API key.
 | coordinates| Map        | The latitude and longitude of the find place.
 
-## Zomato.getLocationBySearchQuery
+## Zomato.searchLocation
 Search for Zomato locations by keyword. 
 
 | Field      | Type       | Description
@@ -124,8 +124,8 @@ Get Foodie Index, Nightlife Index, Top Cuisines and Best rated restaurants in a 
 | Field     | Type       | Description
 |-----------|------------|----------
 | apiKey    | credentials| API key.
-| entityId  | Number     | Location id obtained from getLocation... endpoints.
-| entityType| Select     | Location type obtained from getLocation... endpoints.
+| entityId  | Number     | Location id obtained from searchLocation,getLocationDetails or getLocationDetailsByCoordinates endpoints.
+| entityType| Select     | Location type obtained from searchLocation,getLocationDetails or getLocationDetailsByCoordinates endpoints.Options - city,subzone,zone,metro,group,landmark.
 
 ## Zomato.getDailyMenu
 Get daily menu using Zomato restaurant ID.
@@ -153,7 +153,7 @@ Get restaurant reviews using the Zomato restaurant ID. Only 5 latest reviews are
 | count       | Number     | Number of max results to display.
 | offset      | Number     | Fetch results after this offset.
 
-## Zomato.getSearch
+## Zomato.search
 The location input can be specified using Zomato location ID or coordinates. Cuisine / Establishment / Collection IDs can be obtained from respective api calls.Get up to 100 restaurants by changing the 'start' and 'count' parameters with the maximum value of count being 20. Partner Access is required to access photos and reviews.
 To search for 'Italian' restaurants in 'Manhattan, New York City', set ```cuisines = 55, entity_id = 94741 and entity_type = zone```
 To search for 'cafes' in 'Manhattan, New York City', set ```establishment_type = 1, entity_type = zone and entity_id = 94741```
@@ -163,7 +163,7 @@ Get list of all restaurants in 'Trending this Week' collection in 'New York City
 |----------------|------------|----------
 | apiKey         | credentials| API key.
 | entityId       | Number     | Location id from getLocation... endpoints.
-| entityType     | Select     | Location type obtained from getLocation... endpoints.
+| entityType     | Select     | Location type obtained from searchLocation,getLocationDetails or getLocationDetailsByCoordinates endpoints. Options - city,subzone,zone,metro,group,landmark.
 | searchQuery    | String     | Search keyword.
 | count          | Number     | Number of max results to display.
 | offset         | Number     | Fetch results after this offset.
@@ -173,6 +173,8 @@ Get list of all restaurants in 'Trending this Week' collection in 'New York City
 | establishmentId| String     | Establishment id obtained from getEstablishments or getEstablishmentsByCoordinates endpoints.
 | collectionId   | String     | Collection id obtained from getCollection or getCollectionById endpoint.
 | categoryId     | String     | Category id obtained from getCategories endpoint.
-| sort           | Select     | Sort restaurants by ...
-| order          | Select     | used with 'sort' parameter to order results.
+| sort           | Select     | Sort restaurants by cost,rating,realDistance.
+                                                   				
+                                                    					
+| order          | Select     | used with 'sort' parameter to order results. Options - descending,ascending,realDistance.
 
