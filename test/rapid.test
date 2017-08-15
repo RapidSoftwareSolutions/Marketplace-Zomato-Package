@@ -1,0 +1,348 @@
+{
+	"name": "Zomato",
+	"description": "Zomato APIs give you access to the freshest and most exhaustive information for over 1.5 million restaurants across 10,000 cities globally. With the Zomato APIs, you can : Search for restaurants by name, cuisine, or location; Display detailed information including ratings, location and cuisine;Use the Zomato Foodie Index to show great areas to dine in a city;",
+	"connect": {
+		"username": "qa-project",
+		"password": "481bab2d-e8fe-4214-8714-bab8157356e4"
+	},
+	"dependencies": {
+
+	},
+	"blocks": [
+		{
+			"name": "getAllCategories",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "apiKey",
+					"value": "{{apiKey}}"
+				}
+			]
+		},
+		{
+			"name": "searchCity",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "apiKey",
+					"value": "{{apiKey}}"
+				},
+				{
+					"key": "searchQuery",
+					"value": "New York"
+				},
+				{
+					"key": "count",
+					"value": "{{count}}"
+				}
+			]
+		},
+		{
+			"name": "getCitiesByCoordinates",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "apiKey",
+					"value": "{{apiKey}}"
+				},
+				{
+					"key": "coordinates",
+					"value": "{{coordinates}}"
+				},
+				{
+					"key": "count",
+					"value": "{{count}}"
+				}
+			]
+		},
+		{
+			"name": "getCities",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "apiKey",
+					"value": "{{apiKey}}"
+				},
+				{
+					"key": "cityIds",
+					"value": ["280"]
+				}
+			]
+		},
+		{
+			"name": "getCollection",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "apiKey",
+					"value": "{{apiKey}}"
+				},
+				{
+					"key": "cityId",
+					"value": 280
+				},
+				{
+					"key": "count",
+					"value": "{{count}}"
+				}
+			]
+		},
+		{
+			"name": "getCollectionsByCoordinates",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "apiKey",
+					"value": "{{apiKey}}"
+				},
+				{
+					"key": "coordinates",
+					"value": "{{coordinates}}"
+				},
+				{
+					"key": "count",
+					"value": "{{count}}"
+				}
+			]
+		},
+		{
+			"name": "getCuisines",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "apiKey",
+					"value": "{{apiKey}}"
+				},
+				{
+					"key": "cityId",
+					"value": 280
+				}
+			]
+		},
+		{
+			"name": "getCuisinesByCoordinates",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "apiKey",
+					"value": "{{apiKey}}"
+				},
+				{
+					"key": "coordinates",
+					"value": "{{coordinates}}"
+				}
+			]
+		},
+		{
+			"name": "getEstablishments",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "apiKey",
+					"value": "{{apiKey}}"
+				},
+				{
+					"key": "cityId",
+					"value": 280
+				}
+			]
+		},
+		{
+			"name": "getEstablishmentsByCoordinates",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "apiKey",
+					"value": "{{apiKey}}"
+				},
+				{
+					"key": "coordinates",
+					"value": "{{coordinates}}"
+				}
+			]
+		},
+		{
+			"name": "getLocationDetailsByCoordinates",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "apiKey",
+					"value": "{{apiKey}}"
+				},
+				{
+					"key": "coordinates",
+					"value": "{{coordinates}}"
+				}
+			]
+		},
+		{
+			"name": "searchLocation",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "apiKey",
+					"value": "{{apiKey}}"
+				},
+				{
+					"key": "searchQuery",
+					"value": "New York"
+				},
+				{
+					"key": "coordinates",
+					"value": "{{coordinates}}"
+				},
+				{
+					"key": "count",
+					"value": "{{count}}"
+				}
+			]
+		},
+		{
+			"name": "getLocationDetails",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "apiKey",
+					"value": "{{apiKey}}"
+				},
+				{
+					"key": "entityId",
+					"value": "{{entityId}}"
+				},
+				{
+					"key": "entityType",
+					"value": "{{entityType}}"
+				}
+			]
+		},
+		{
+			"name": "getDailyMenu",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "apiKey",
+					"value": "{{apiKey}}"
+				},
+				{
+					"key": "restaurantId",
+					"value": "{{restaurantId}}"
+				}
+			]
+		},
+		{
+			"name": "getRestaurant",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "apiKey",
+					"value": "{{apiKey}}"
+				},
+				{
+					"key": "restaurantId",
+					"value": "{{restaurantId}}"
+				}
+			]
+		},
+		{
+			"name": "getReviews",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "apiKey",
+					"value": "{{apiKey}}"
+				},
+				{
+					"key": "restaurantId",
+					"value": "{{restaurantId}}"
+				},
+				{
+					"key": "count",
+					"value": "{{count}}"
+				},
+				{
+					"key": "offset",
+					"value": 2
+				}
+			]
+		},
+		{
+			"name": "search",
+			"note": "",
+			"skip": false,
+			"params": [
+				{
+					"key": "apiKey",
+					"value": "{{apiKey}}"
+				},
+				{
+					"key": "entityId",
+					"value": "{{entityId}}"
+				},
+				{
+					"key": "entityType",
+					"value": "{{entityType}}"
+				},
+				{
+					"key": "searchQuery",
+					"value": "New York"
+				},
+				{
+					"key": "count",
+					"value": "{{count}}"
+				},
+				{
+					"key": "offset",
+					"value": 2
+				},
+				{
+					"key": "coordinates",
+					"value": "{{coordinates}}"
+				},
+				{
+					"key": "radiusSearch",
+					"value": "10"
+				},
+				{
+					"key": "cuisinesIds",
+					"value": ["6"]
+				},
+				{
+					"key": "establishmentId",
+					"value": "16"
+				},
+				{
+					"key": "collectionId",
+					"value": "1"
+				},
+				{
+					"key": "categoryId",
+					"value": "1"
+				},
+				{
+					"key": "sort",
+					"value": "cost"
+				},
+				{
+					"key": "order",
+					"value": "asc"
+				}
+			]
+		}
+	]
+}
