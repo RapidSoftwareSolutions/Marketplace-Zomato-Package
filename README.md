@@ -174,5 +174,5 @@ Get list of all restaurants in 'Trending this Week' collection in 'New York City
 | collectionId   | String     | Collection id obtained from getCollection or getCollectionById endpoint.
 | categoryId     | String     | Category id obtained from getCategories endpoint.
 | sort           | Select     | Sort restaurants by cost,rating,realDistance.                                                   				                                                    					
-| order          | Select     | used with 'sort' parameter to order results. Options - descending,ascending,realDistance.
+| order          | Select     | used with 'sort' parameter to order results. Options - descending,ascending.
 

@@ -633,8 +633,7 @@
 					"type":"Select",
 					"options":[
 						"desc",
-						"asc",
-						"realDistance"
+						"asc"
 					],
 					"info":"used with 'sort' parameter to order results.",
 					"required":false
